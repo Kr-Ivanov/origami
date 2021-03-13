@@ -1,12 +1,18 @@
 import React from 'react';
+import Post from '../Post';
 import './Main.css';
 
 
-function Main() {
+const Main = ({
+    posts
+}) => {
+
     return (
         <main className="main-container">
             <h1>Some heading</h1>
-            <p>some posts</p>
+            {posts.map(post =>
+                <p key={post.id}>{post.content}</p>
+            )}
         </main>
     )
 }
