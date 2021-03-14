@@ -2,10 +2,23 @@ import React from 'react'
 import './MenuItem.css';
 
 
-function MenuItem({ children }) {
+const MenuItem = ({
+    id,
+    onClick,
+    children,
+    isSelected
+}) => {
+    let classes = ['menu-item'];
+
+    if (isSelected) {
+        classes.push('menu-item-selected');
+    }
+
     return (
-        <li className="menu-item" >
-            <a href="#">{children}</a>
+        <li className={classes.join(' ')} >
+            <a href="#" onClick={() => onClick(id)}>
+                {children}
+            </a>
         </li>
     )
 }

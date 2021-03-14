@@ -10,9 +10,17 @@ const Main = ({
     return (
         <main className="main-container">
             <h1>Some heading</h1>
-            {posts.map(post =>
-                <p key={post.id}>{post.content}</p>
-            )}
+            <div className="posts">
+                {posts.map(x =>
+                    <Post
+                        key={x.id}
+                        id={x.id}
+                        content={x.content}
+                        author={x.author}
+                    />
+                )}
+            </div>
+
         </main>
     )
 }
